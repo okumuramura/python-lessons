@@ -11,3 +11,11 @@
 ######
 
 '''
+
+# h = int(input())
+# w = int(input())
+h, w = map(int, input().split())
+
+print('#' * w)
+print(('#' + ' ' * (w - 2) + '#\n') * (h - 2), end='')
+print('#' * w)
