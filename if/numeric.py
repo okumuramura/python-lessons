@@ -9,3 +9,24 @@
 17
 17 рублей
 '''
+
+
+def numeric(n: int, s0: str, s1: str, s2: str) -> str:
+    n = abs(n)
+    n0 = n % 10
+    n1 = n // 10 % 10
+    if (
+        n1 == 1 or
+        (5 <= n0 <= 9) or
+        n0 == 0
+    ):
+        return s2  # рублей
+    elif n0 == 1:
+        return s0  # рубль
+    else:
+        return s1  # рубля
+
+
+n = -2
+print(n, numeric(n, 'рубль', 'рубля', 'рублей'))
+print(n, numeric(n, 'звезда', 'звезды', 'звёзд'))
