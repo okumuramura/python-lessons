@@ -13,8 +13,19 @@ def reverse(n):
 
     return result
 
+def reverse2(n):
+    result = 0
+    while n != 0:
+        a = n % 10
+        result = result * 10 + a
+        n = n // 10
+    
+    return result
+
 def simple_reverse(n):
     return int(str(n)[::-1])
 
-print(reverse(123456))
-print(simple_reverse(123456))
+n = 1233456
+print(reverse(n))
+print(simple_reverse(n))
+print(reverse2(n))
