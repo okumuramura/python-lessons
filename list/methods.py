@@ -1,11 +1,11 @@
-l = list(map(int, input().split()))
-a, b, c, d = map(int, input().split())
+text = input().lower()
+counter = {}
+total = 0
 
-l.append(a)
-l.extend(l[:len(l)//2])
-l.pop()
-l.pop(b)
-l.insert(c, d)
-l.append(l.index(a))
+for e in text:
+    if e != ' ':
+        counter[e] = counter.get(e, 0) + 1
+        total = total + 1
 
-print(*l)
+for key, value in counter.items():
+    print(key, value, value / total * 100)
