@@ -5,8 +5,22 @@ class Monster:
         self.is_dead = False
     
     def hit(self, dmg):
-        ...
+        self.hp = self.hp - dmg
 
+    @property
+    def hp(self):
+        return self.__hp
+    
+    @hp.setter
+    def hp(self, hp):
+        if hp < 0:
+            self.__hp = 0
+        elif hp > self.__max_hp:
+            self.__hp = self.__max_hp
+        else:
+            self.__hp = hp
+        
+        self.is_dead = self.__hp == 0
 
 dragon = Monster(1000)
 
