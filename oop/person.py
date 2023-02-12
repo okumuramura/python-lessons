@@ -1,6 +1,7 @@
 class Person:
     def __init__(self, age):
-        self.__age = age
+        self.__age = 1
+        self.age = age
 
     @property
     def age(self):
@@ -12,13 +13,6 @@ class Person:
             self.__age = v
 
 
-kolya = Person(23)
+kolya = Person(-20)
 
 print(kolya.age)
-
-kolya.age = -1  # do nothing
-
-print(kolya.age)  # 23
-
-kolya.age = 24
-print(kolya.age)  # 24
