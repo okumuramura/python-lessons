@@ -14,7 +14,8 @@ class MainWindow(QtWidgets.QWidget):
     def color_pick(self):
         color_picker = QtWidgets.QColorDialog(self)
         color = color_picker.getColor()
-        print(color.name())
+        self.setStyleSheet(f"background: {color.name()}")
+        self.setWindowTitle(color.name())
 
 app = QtWidgets.QApplication()
 
